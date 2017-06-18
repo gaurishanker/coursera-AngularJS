@@ -56,7 +56,7 @@
         console.log(name);
         for(var item of menu)
         {
-            if(item.name.toLowerCase().indexOf(name)!=-1)
+            if(item.description.toLowerCase().indexOf(name)!=-1)
               found.push(item);
         }
         console.log(found);
