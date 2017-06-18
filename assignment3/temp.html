@@ -1,0 +1,18 @@
+<div class="col-md-12" ng-repeat="item in myList.list">
+
+  <div class="col-md-3">
+    {{ item.name }}
+  </div>
+  <div class="col-md-1" >
+     ({{ item.short_name }})
+   </div>
+   <div class="col-md-7">
+      - {{ item.description }}
+  </div>
+  <div class="col-md-1">
+    <button type="button" name="button" ng-click="myList.onRemove({index : $index})" class="btn btn-success">Don't want this one!</button>
+  </div>
+</div>
+<div ng-if="myList.list.length == 0" class="col-md-12">
+  Nothing found!
+</div>

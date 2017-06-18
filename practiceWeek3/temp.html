@@ -1,0 +1,9 @@
+<ol >
+  <li ng-repeat="item in mylist.list">
+    {{ item.qty }} kg {{ item.name }}
+    <button type="button" ng-click="mylist.myMethod({index : $index})" class="btn btn-default" style="background-color:#E16153;color:white">Remove</button>
+  </li>
+</ol>
+<div class="error" ng-if="mylist.cookiesInList()">
+  WARNING!
+</div>
