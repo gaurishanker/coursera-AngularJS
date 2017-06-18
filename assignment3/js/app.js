@@ -45,6 +45,8 @@
     var service = this;
     var found = [];
     service.getMenuItems = function(name) {
+      if(name==="")
+        return found;
       found.splice(0,found.length);
       var response = $http({
         url : "https://davids-restaurant.herokuapp.com/menu_items.json",
