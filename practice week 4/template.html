@@ -1,0 +1,4 @@
+<li ng-repeat="item in $ctrl.items">
+  {{ item.qty }} of {{ item.name }}
+  <button type="button" ng-click="$ctrl.onRemove({ index : $index })" class="btn btn-default" name="button">Remove this!!</button>
+</li>

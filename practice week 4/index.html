@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Practice week 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="src/app.js"></script>
+    <style media="screen">
+      .error{
+        color: red
+      }
+    </style>
+  </head>
+  <body >
+    <div class="container">
+      <div class="row" ng-controller="ShoppingListController as list">
+        <div class="col-md-12">
+          <h3>Component practice</h3>
+          <hr>
+        </div>
+
+        <div class="col-md-12">
+            <input type="text" ng-model="list.name" placeholder="Enter item" class="col-md-4 input-sm"/>
+            <input type="text" ng-model="list.qty" placeholder="Enter Quantity" class="col-md-4 input-sm">
+            <button type="button" class="btn btn-warning" ng-click="list.addItem(list.name,list.qty)" class="col-md-4" name="button">Add me!!</button>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Shopping List</h3>
+            <hr>
+          </div>
+          <div class="col-md-12">
+            <ol>
+              <list-component items="list.items" on-remove="list.removeItem(index)" ></list-component>
+            </ol>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tabs">
+          <a ui-sref="tab1" >Tab 1</a>
+          <a ui-sref="tab2" >Tab 2</a>
+      </div>
+
+      <ui-view></ui-view>
+    </div>
+  </body>
+</html>
