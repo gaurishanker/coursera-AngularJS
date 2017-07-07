@@ -9,7 +9,7 @@
         $urlRouterProvider.otherwise("/home");
         $stateProvider.state("categories",{
             url : "/categories",
-            templateUrl : "src/template/tab1.html",
+            templateUrl : "/coursera-AngularJS/assignment4/src/template/tab1.html",
             controller : "CategoryComponentController as ctrl"//,
             // reslove : {
             //   categories : ['MenuDataService', function(MenuDataService) {
@@ -20,11 +20,11 @@
         })
         .state("home",{
             url : "/home",
-            templateUrl : "/src/template/home-template.html"
+            templateUrl : "/coursera-AngularJS/assignment4/src/template/home-template.html"
         })
         .state("items",{
             url : "/item/{itemId}",
-            templateUrl : "/src/template/itemsTab.html",
+            templateUrl : "/coursera-AngularJS/assignment4/src/template/itemsTab.html",
             controller : "ItemsController",
             resolve : {
                 item : ["$stateParams","MenuDataService",function($stateParams,MenuDataService) {

@@ -3,7 +3,7 @@
 
     angular.module("data")
     .component("items", {
-        templateUrl : "/src/template/items.html",
+        templateUrl : "/coursera-AngularJS/assignment4/src/template/items.html",
         bindings : {
             items : "<"
         },

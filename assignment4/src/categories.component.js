@@ -4,7 +4,7 @@
     angular.module("data")
     .controller("CategoryComponentController",CategoryComponentController)
     .component("categories", {
-        templateUrl : "src/template/categories.html",
+        templateUrl : "/coursera-AngularJS/assignment4/src/template/categories.html",
         bindings : {
              categories : "<"
         },
@@ -24,7 +24,7 @@
               console.log("error",error);
         });
 
-      
+
 
     }
 })();
