@@ -1,0 +1,87 @@
+<style>
+  .textColor {
+      color: black;
+      margin-top: 1%;
+      width: 500px
+  }
+  .ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+</style>
+<div class="container">
+<div class="row" ng-controller="SignUpController as formCtrl">
+  <div class="col-sm-12">
+    <h1>Newsletter Sign UP</h1>
+      <form name="regForm" novalidate>
+        <table>
+          <tr >
+            <td class="col-sm-6">
+              <input class="textColor" type="text" name="firstName"   ng-model="formCtrl.user.firstName"  placeholder="Enter First Name" required minlength="4" ng-maxlength="20">
+            </td>
+            <td  class="col-sm-6">
+                <span ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required) && regForm.firstName.$touched">
+                    Username must be at least 4 characters long
+                  </span>
+                  <span ng-if="regForm.firstName.$error.maxlength && regForm.firstName.$touched">
+                    Username must not be longer than 20 characters
+                  </span>
+
+            </td>
+          </tr>
+          <tr>
+            <td  class="col-sm-6">
+                <input class="textColor" type="text" name="lastName" placeholder="Enter your Last Name" ng-model="formCtrl.user.lastName" required ng-maxlength="10">
+            </td>
+            <td  class="col-sm-6">
+                <span ng-if="regForm.lastName.$error.maxlength && regForm.lastName.$touched">
+                  Last name should be no longer than 10 characters
+                </span>
+                <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+                  Last Name is required.
+                </span>
+            </td>
+          </tr>
+          <tr>
+            <td  class="col-sm-6">
+              <input class="textColor " type="email" name="email" placeholder="Your email" required ng-model="formCtrl.user.email">
+            </td>
+            <td  class="col-sm-6">
+              <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                Must be a valid email address: handle@domain format
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-sm-6">
+              <input type="text" class="textColor" name="favCat" required ng-model="formCtrl.user.favCat" ng-change="formCtrl.CheckValid()" value="" placeholder="Enter Favourite menu short code">
+            </td>
+            <td>
+                <span ng-if="formCtrl.validCat == false">
+                    No such menu number exists
+                </span>
+            </td>
+          </tr>
+          <tr>
+            <td  class="col-sm-6">
+              <input class="textColor" type="number" name="phone" required pattern="(\d{10})" placeholder="Enter your phone number 10 digits" ng-model="formCtrl.user.phone"></td>
+            <td  class="col-sm-6">
+              <span ng-if="regForm.phone.$touched && regForm.phone.$invalid">
+                  You must Enter 10 digits mobile Number
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td  class="col-sm-6">  <button class="textColor btn btn-primary" ng-disabled="regForm.$invalid" ng-click="formCtrl.setDetails()" name="submit">Submit</button></td>
+            <td  class="col-sm-6"></td>
+          </tr>
+        </table>
+      </form>
+      <span ng-if="formCtrl.completed==true">Form Successfully submitted</span>
+    </div>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<div ng-controller="InfoController as info" class="container">
+  <h1>Your Information</h1>
+  <div class="row" ng-if="info.user != undefined">
+      <div class="col-md-6">
+        <span> Your name is {{ info.user.firstName }} {{ info.user.lastName }}</span>
+      </div>
+      <div class="col-md-6">
+        <span>Your phone number is {{ info.user.phone }}</span>
+      </div>
+      <div class="col-md-6">
+        <span>your Email is {{ info.user.email }}</span>
+      </div>
+      <div class="col-md-12">
+          Here are the details of Menu item you like :
+      </div>
+      <div class="col-md-12">
+        <img ng-src="{{info.basepath}}/images/{{info.item.short_name}}.jpg" alt="No image Present">
+      </div>
+      <div class="col-md-12">
+        <b> {{ info.item.name }}</b>
+      </div>
+      <div class="col-md-12">
+        {{ info.item.description }}
+      </div>
+
+  </div>
+  <div class="row" ng-if="info.user == undefined">
+      <span class="col-md-12"> Not Signed Up Yet.<a ui-sref="public.signUp"> Sign up Now! </a></span>
+  </div>
+
+</div>
