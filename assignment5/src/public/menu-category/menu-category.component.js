@@ -3,7 +3,7 @@
 
 angular.module('public')
 .component('menuCategory', {
-  templateUrl: 'src/public/menu-category/menu-category.html',
+  templateUrl: '/coursera-AngularJS/assignment5/src/public/menu-category/menu-category.html',
   bindings: {
     category: '<'
   }

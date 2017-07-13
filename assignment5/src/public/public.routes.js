@@ -13,15 +13,15 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: '/coursera-AngularJS/assignment5/src/public/public.html'
     })
     .state('public.home', {
       url: '/',
-      templateUrl: 'src/public/home/home.html'
+      templateUrl: '/coursera-AngularJS/assignment5/src/public/home/home.html'
     })
     .state('public.menu', {
       url: '/menu',
-      templateUrl: 'src/public/menu/menu.html',
+      templateUrl: '/coursera-AngularJS/assignment5/src/public/menu/menu.html',
       controller: 'MenuController',
       controllerAs: 'menuCtrl',
       resolve: {
@@ -32,7 +32,7 @@ function routeConfig ($stateProvider) {
     })
     .state('public.menuitems', {
       url: '/menu/{category}',
-      templateUrl: 'src/public/menu-items/menu-items.html',
+      templateUrl: '/coursera-AngularJS/assignment5/src/public/menu-items/menu-items.html',
       controller: 'MenuItemsController',
       controllerAs: 'menuItemsCtrl',
       resolve: {
@@ -43,12 +43,12 @@ function routeConfig ($stateProvider) {
     })
     .state('public.signUp', {
       url: '/signUp',
-      templateUrl: 'src/public/signUp/signUp.html',
+      templateUrl: '/coursera-AngularJS/assignment5/src/public/signUp/signUp.html',
       controller: 'SignUpController'
     })
     .state('public.info',{
         url: '/myInfo',
-        templateUrl : 'src/public/info/info.html',
+        templateUrl : '/coursera-AngularJS/assignment5/src/public/info/info.html',
         controller : 'InfoController'
     });
 }
